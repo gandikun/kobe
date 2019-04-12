@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    run: g-zero-ingress
+  name: g-zero-ingress
+  namespace: zero-dev
+spec:
+  backend:
+    serviceName: g-zero-service-ingress
+    servicePort: 80
+

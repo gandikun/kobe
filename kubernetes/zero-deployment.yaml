@@ -1,0 +1,62 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: g-zero-deployment
+  name: g-zero-deployment
+  namespace: zero-dev
+spec:
+#  progressDeadlineSeconds: 600
+  minReadySeconds: 30
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      run: g-zero-deployment
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: g-zero-deployment
+    spec:
+      containers:
+      - image: asia.gcr.io/g-zero/pithon:v0.0.0.4
+        imagePullPolicy: IfNotPresent
+        name: g-zero-deployment
+        ports:
+        - containerPort: 8484
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8484
+          initialDelaySeconds: 5
+          periodSeconds: 2
+        env:
+          - name: SECRET_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: zero-secret
+                key: username
+          - name: SECRET_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: zero-secret
+                key: password
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
