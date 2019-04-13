@@ -139,6 +139,20 @@ Just checking access
 kubectl auth can-i get pods
 ```
 
+## Nginx Ingress
+
+```
+http://rahmonov.me/posts/nginx-ingress-controller/
+https://akomljen.com/kubernetes-nginx-ingress-controller/
+https://hackernoon.com/setting-up-nginx-ingress-on-kubernetes-2b733d8d2f45
+https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-with-cert-manager-on-digitalocean-kubernetes
+https://docs.giantswarm.io/guides/advanced-ingress-configuration/
+https://kubernetes.github.io/ingress-nginx/examples/rewrite/
+
+PS: Mark Statham example seems follow fro digitalocean link
+https://gitlab.cloud.bukalapak.io/mstatham/example-cluster-setup
+```
+
 
 ## Additional Note
 
