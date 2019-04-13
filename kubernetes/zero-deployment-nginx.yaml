@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: zero-nginx
+    resource: pods
+    type: deployment
+  name: zero-nginx-deployment
+  namespace: zero-nginx
+spec:
+  progressDeadlineSeconds: 600
+  minReadySeconds: 30
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: zero-nginx
+      resource: pods
+      type: deployment
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: zero-nginx
+        resource: pods
+        type: deployment
+    spec:
+      serviceAccountName: zero-nginx-serviceaccount
+      containers:
+      - image: quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.24.0 
+        imagePullPolicy: IfNotPresent
+        name: zero-nginx-controller
+        lifecycle:
+          preStop:
+            exec:
+              command:
+                - /bin/sh
+                - -c
+                - sleep 45
+        args:
+          - /nginx-ingress-controller
+          - --configmap=$(POD_NAMESPACE)/zero-nginx-configuration
+          - --publish-service=$(POD_NAMESPACE)/zero-nginx-service
+          - --v=2
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 10254
+          initialDelaySeconds: 5
+          periodSeconds: 2
+        env:
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 65

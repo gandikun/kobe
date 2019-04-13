@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
+  name: zero-app-ingress
+  namespace: zero-dev
+  labels:
+    app: zero-nginx
+    resource: loadbalancer
+    type: ingress
+spec:
+  rules:
+  - host: kobe.gandi.id
+    http:
+      paths:
+      - backend:
+          serviceName: g-zero-service
+          servicePort: 80
+        path: /
+  - host: kobe.gandi.id
+    http:
+      paths:
+      - backend:
+          serviceName: g-zero-service
+          servicePort: 80
+        path: /service01
+  - host: kobe01.gandi.id
+    http:
+      paths:
+      - backend:
+          serviceName: g-zero-service
+          servicePort: 80
+        path: /service01

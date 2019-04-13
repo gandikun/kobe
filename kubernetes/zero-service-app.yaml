@@ -8,11 +8,9 @@ metadata:
 spec:
   externalTrafficPolicy: Cluster
   ports:
-  - nodePort: 30648
-    port: 80
+  - port: 80
     protocol: TCP
     targetPort: 8484
   selector:
-    run: g-zero-service
-  sessionAffinity: None
-  type: LoadBalancer
+    run: g-zero-deployment
+  type: NodePort
