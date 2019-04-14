@@ -13,41 +13,41 @@ provider "google" {
 }
 
 resource "google_compute_network" "g-network" {
-  name                    = "g-one"
+  name                    = "g-zero"
   auto_create_subnetworks = false
   routing_mode            = "REGIONAL"
 }
 
 resource "google_compute_subnetwork" "g-subnetworki-gce" {
-  name          = "one-gce"
+  name          = "zero-gce"
   network       = "${google_compute_network.g-network.self_link}"
   ip_cidr_range = "10.0.0.0/22"
   region        = "asia-southeast1"
 }
 
 resource "google_compute_subnetwork" "g-subnetworki-gke" {
-  name          = "one-gke"
+  name          = "zero-gke"
   network       = "${google_compute_network.g-network.self_link}"
   ip_cidr_range = "10.0.4.0/22"
   region        = "asia-southeast1"
   secondary_ip_range {
-      range_name    = "one-gke-0"
+      range_name    = "zero-gke-0"
       ip_cidr_range = "172.16.0.0/15"
   }
   secondary_ip_range {
-      range_name    = "one-gke-1"
+      range_name    = "zero-gke-1"
       ip_cidr_range = "172.18.0.0/15"
   }
 }
 
 resource "google_compute_router" "g-router" {
-  name    = "one-router"
+  name    = "zero-router"
   region  = "asia-southeast1"
   network = "${google_compute_network.g-network.self_link}"
 }
 
 resource "google_compute_router_nat" "g-nat" {
-  name                               = "one-nat"
+  name                               = "zero-nat"
   router                             = "${google_compute_router.g-router.name}"
   region                             = "asia-southeast1"
   nat_ip_allocate_option             = "AUTO_ONLY"
