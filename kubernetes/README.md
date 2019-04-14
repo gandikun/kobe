@@ -25,7 +25,7 @@ gcloud container clusters create g-zero-gcp \
 ## Update whitelisted allowed IP for master GKE cluster
 
 ```
-gcloud container clusters update g-zero-gcp --region asia-southeast1 --enable-master-authorized-networks --project g-zero --master-authorized-networks 140.0.54.244/32
+gcloud container clusters update g-zero-gcp --region asia-southeast1 --enable-master-authorized-networks --project g-zero --master-authorized-networks $(curl -s ifconfig.co)/32
 ```
 
 ## Get GKE cLuster credentials
