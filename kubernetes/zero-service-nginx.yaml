@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     #cloud.google.com/neg: '{"ingress": true}'
-    #cloud.google.com/load-balancer-type: Internal
+    cloud.google.com/load-balancer-type: Internal
   labels:
     app: zero-nginx
     resource: nodeport

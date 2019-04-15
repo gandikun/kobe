@@ -8,7 +8,8 @@ metadata:
 spec:
   externalTrafficPolicy: Cluster
   ports:
-  - port: 80
+  - nodePort: 31233
+    port: 80
     protocol: TCP
     targetPort: 8484
   selector:
