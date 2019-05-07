@@ -149,9 +149,16 @@ https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nginx-ingress-
 https://docs.giantswarm.io/guides/advanced-ingress-configuration/
 https://kubernetes.github.io/ingress-nginx/examples/rewrite/
 
-PS: Mark Statham example seems follow fro digitalocean link
+PS: Mark Statham example seems follow from digitalocean link
 https://gitlab.cloud.bukalapak.io/mstatham/example-cluster-setup
 ```
+
+## How to rollback
+
+```
+https://romain.dorgueil.net/blog/en/tips/2016/08/27/rollout-rollback-kubernetes-deployment.html
+```
+
 
 
 ## Additional Note
