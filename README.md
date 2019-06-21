@@ -166,3 +166,32 @@ https://romain.dorgueil.net/blog/en/tips/2016/08/27/rollout-rollback-kubernetes-
 ```
 https://www.chrismoos.com/2016/09/28/zero-downtime-deployments-kubernetes/
 ```
+
+
+
+## Service Mesh(Istio)
+
+Istio Basic Understanding
+
+- [https://www.infoworld.com/article/3328817/what-is-istio-the-kubernetes-service-mesh-explained.html](https://www.infoworld.com/article/3328817/what-is-istio-the-kubernetes-service-mesh-explained.html)
+- [https://glasnostic.com/blog/kubernetes-service-mesh-what-is-istio](https://glasnostic.com/blog/kubernetes-service-mesh-what-is-istio)
+- [https://istio.io/docs/concepts/what-is-istio/](https://istio.io/docs/concepts/what-is-istio/)
+
+Istio Multicluster Setup
+
+- [https://istio.io/docs/setup/kubernetes/install/multicluster/vpn/](https://istio.io/docs/setup/kubernetes/install/multicluster/vpn/)
+  - [https://istio.io/docs/tasks/multicluster/split-horizon-eds/](https://istio.io/docs/tasks/multicluster/split-horizon-eds/)
+- [https://istio.io/docs/setup/kubernetes/install/multicluster/gateways/](https://istio.io/docs/setup/kubernetes/install/multicluster/gateways/)
+  - [https://istio.io/docs/tasks/multicluster/gateways/](https://istio.io/docs/tasks/multicluster/gateways/)
+
+Accessing Services Outside Istio Mesh
+
+- [https://istio.io/docs/tasks/traffic-management/egress/egress-control/](https://istio.io/docs/tasks/traffic-management/egress/egress-control/)
+
+Extending your Mesh(make your VMs join your GKE service mesh)
+
+- [https://istio.io/docs/setup/kubernetes/additional-setup/mesh-expansion/](https://istio.io/docs/setup/kubernetes/additional-setup/mesh-expansion/)
+
+Sample Examples
+
+- [https://github.com/GoogleCloudPlatform/istio-samples](https://github.com/GoogleCloudPlatform/istio-samples)
