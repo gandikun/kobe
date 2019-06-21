@@ -195,3 +195,55 @@ Extending your Mesh(make your VMs join your GKE service mesh)
 Sample Examples
 
 - [https://github.com/GoogleCloudPlatform/istio-samples](https://github.com/GoogleCloudPlatform/istio-samples)
+
+
+
+## Scaling In Kubernetes
+
+VPA
+
+- [https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler)
+
+HPA
+
+- [https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/)
+- [https://medium.com/uptime-99/kubernetes-hpa-autoscaling-with-custom-and-external-metrics-da7f41ff7846](https://medium.com/uptime-99/kubernetes-hpa-autoscaling-with-custom-and-external-metrics-da7f41ff7846)
+
+Auto Scaling in Kuberenetes
+
+- [https://medium.com/kubecost/understanding-kubernetes-cluster-autoscaling-675099a1db92](https://medium.com/kubecost/understanding-kubernetes-cluster-autoscaling-675099a1db92)
+- [https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler)
+
+
+
+## Canary in Kubernetes
+
+Using Spinnaker:
+
+- [https://cloud.google.com/solutions/automated-canary-analysis-kubernetes-engine-spinnaker](https://cloud.google.com/solutions/automated-canary-analysis-kubernetes-engine-spinnaker)
+
+Using Code Build:
+
+- [https://codelabs.developers.google.com/codelabs/cloud-builder-gke-continuous-deploy/index.html#8](https://codelabs.developers.google.com/codelabs/cloud-builder-gke-continuous-deploy/index.html#8)
+
+Using native kubernetes way:
+
+- [https://medium.com/google-cloud/kubernetes-canary-deployments-for-mere-mortals-13728ce032fe](https://medium.com/google-cloud/kubernetes-canary-deployments-for-mere-mortals-13728ce032fe)
+- [https://www.bogotobogo.com/DevOps/Docker/Docker-Rolling-Update-Canary-Blue-Green-Deployments-to-GKE-Kubernetes.php](https://www.bogotobogo.com/DevOps/Docker/Docker-Rolling-Update-Canary-Blue-Green-Deployments-to-GKE-Kubernetes.php)
+- [https://medium.com/google-cloud/automated-canary-deployments-with-flagger-and-istio-ac747827f9d1](https://medium.com/google-cloud/automated-canary-deployments-with-flagger-and-istio-ac747827f9d1)
+
+Using Flagger and Istio:
+
+- [https://medium.com/google-cloud/automated-canary-deployments-with-flagger-and-istio-ac747827f9d1](https://medium.com/google-cloud/automated-canary-deployments-with-flagger-and-istio-ac747827f9d1)
+
+Using Istio:
+
+- [https://github.com/GoogleCloudPlatform/istio-samples/tree/master/istio-canary-gke](https://github.com/GoogleCloudPlatform/istio-samples/tree/master/istio-canary-gke)
+
+- [https://istio.io/blog/2017/0.1-canary/](https://istio.io/blog/2017/0.1-canary/)
+
+- [https://istio.io/docs/tasks/traffic-management/traffic-shifting/](https://istio.io/docs/tasks/traffic-management/traffic-shifting/)
+
+- [https://istio.io/docs/concepts/traffic-management/#splitting-traffic-between-versions](https://istio.io/docs/concepts/traffic-management/#splitting-traffic-between-versions)
+
+  ​
