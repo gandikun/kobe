@@ -27,7 +27,7 @@ please mention be caution to mention in first place to lead effective conversati
 Next migration engineer, coach and TPM will help prepare what need to setup like GCP project and namesapce and create it right a way.
 
 
-### Access of projects
+### Access
 This very important, you will need access to your new environment. But you wont automaticly get it, TPM will help you got these access by default :
 - Service GCP project if have later
 - Kubernetes service namespace access
