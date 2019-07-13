@@ -51,7 +51,7 @@ To give bit clue what you need expect is...
 ```
 Nothing is fixed or perfect, there always changes and improvement, you always can suggest improvement.
 Don't be get upset if you suggestion not implemented straight away, we deal case by case not because we not listen.
-No one have answer for everything, we work as team which everyone have they own role and knowledge.
+No one have an answer for everything, we work as team which everyone have they own role and knowledge.
 
 
 PS: You need fill quite lot documents
